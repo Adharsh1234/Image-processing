@@ -14,7 +14,8 @@ while True:
         contours,hierarchy = cv2.findContours(dilatedimg, cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
         print(len(contours))
         print(contours[0])
-        cv2.drawContours(frame,contours,-1,(0,255,0),2)#where to draw contours,where is contours,apperence of contours
+        c = sorted(contours, key=cv2.contourArea, reverse=True)[0]
+        cv2.drawContours(frame,contours,0,(0,255,0),2)#where to draw contours,where is contours,apperence of contours
         cv2.imshow("Tracker",frame)
         end=cv2.waitKey(1)
         if end == ord("q"):
