@@ -12,7 +12,7 @@ while True:
         cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
         frame[y:y+h,x:x+w]
         hsv=cv2.cvtColor(frame[y:y+h,x:x+w], cv2.COLOR_BGR2HSV)
-        blurred=cv2.blur(frame[y:y+h,x:x+w],(50,50))
+        ablurred=cv2.blur(frame[y:y+h,x:x+w],(50,50))
         frame[y:y+h,x:x+w]=blurred
 
     cv2.imshow("Face",frame)
