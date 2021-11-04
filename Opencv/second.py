@@ -16,3 +16,20 @@ while True:
             cv2.destroyAllWindows()
             camera.release()
             break
+
+
+import cv2
+camera=cv2.VideoCapture(0)
+while True:
+    sucess,frame=camera.read()
+    if sucess:
+    frame=cv2.flip(frame,1)
+    
+    
+    
+    cv2.imshow(,frame)
+    end=cv2.waitKey(1)
+    if end == ord():
+        camera.release()
+        cv2.destroyAllWindows()
+        break
